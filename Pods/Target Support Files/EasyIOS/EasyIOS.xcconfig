@@ -1,0 +1,8 @@
+CLANG_CXX_LANGUAGE_STANDARD = gnu++0x
+CLANG_CXX_LIBRARY = libstdc++
+CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/EasyIOS" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/DBAccess" "${PODS_ROOT}/Headers/Public/EasyIOS" "${PODS_ROOT}/Headers/Public/FLKAutoLayout" "${PODS_ROOT}/Headers/Public/FontIcon" "${PODS_ROOT}/Headers/Public/GCDObjC" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/MJExtension" "${PODS_ROOT}/Headers/Public/MJRefresh" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/ReactiveCocoa" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/TMCache" "${PODS_ROOT}/Headers/Public/UIActivityIndicator-for-SDWebImage" $(SDKROOT)/usr/include/libz, $(SDKROOT)/usr/include/libxml2
+OTHER_LDFLAGS = -l"sqlite3" -l"stdc++" -l"z.1.1.3" -framework "CoreFoundation" -framework "CoreGraphics" -framework "Foundation" -framework "Security" -framework "UIKit"
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES
