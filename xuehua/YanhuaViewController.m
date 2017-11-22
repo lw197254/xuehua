@@ -7,11 +7,11 @@
 
 #import "YanhuaViewController.h"
 #import "YQAnimationLayer.h"
-#import <AVFoundation/AVFoundation.h>
+#import "Player.h"
 #import "SetViewController.h"
-@interface YanhuaViewController ()<AVAudioPlayerDelegate>
+@interface YanhuaViewController ()
 @property (nonatomic, strong)CAEmitterLayer * emitterLayer;
-@property(nonatomic,strong)NSMutableDictionary*playerDict;
+
 @property(nonatomic,strong)SetViewController*setVC;
 @end
 
@@ -23,14 +23,11 @@
      self.view.backgroundColor = [UIColor colorWithRed:22.0f/255.0 green:22.0f/255.0 blue:22.0f/255.0 alpha:1.0];
       [self SetupEmitter];
     UIButton*backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.frame = CGRectMake(0, 0, 40, 40);
+    backButton.frame = CGRectMake(0, 0+[UIApplication sharedApplication].statusBarFrame.size.height, 40, 40);
     [backButton setImage:[UIImage imageNamed:@"返回.png"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
-    _playerDict = [[NSMutableDictionary alloc]init];
-    AVAudioPlayer*playler = [self playerWithSourceName:@"fireworksSoundNormal" type:@"m4a"];
-    [_playerDict setObject:playler forKey:@"fireworksSoundNormal"];
-//    [playler play];
+    
     
     
     UITapGestureRecognizer*tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
@@ -39,57 +36,42 @@
     [self.view addGestureRecognizer:tap];
     [self.view addGestureRecognizer:doubleTap];
      [tap requireGestureRecognizerToFail:doubleTap];
-    UIPanGestureRecognizer*pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(rightPanTouch:)];
+    UILongPressGestureRecognizer*pan = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(rightPanTouch:)];
     [self.view addGestureRecognizer:pan];
+    [[Player shareInstance] playerWithSourceName:@"fireworksSoundNormal" type:@"m4a" numberOfLoops:0 playEndBlock:^(AVAudioPlayer *player) {
+        [self tap:nil];
+        [[Player shareInstance] playerWithSourceName:@"fireworksSound" type:@"mp3" numberOfLoops:0 playEndBlock:^(AVAudioPlayer *player) {
+             [[Player shareInstance] playerWithSourceName:@"papapa" type:@"mp3" numberOfLoops:0 playEndBlock:nil];
+        }];
+       
+    }];
    
 }
 -(void)rightPanTouch:(UIPanGestureRecognizer*)pan{
     
-    CGPoint point = [pan translationInView:self.view];
-    NSLog(@"%f,%f",point.x,point.y);
-    if (point.x <-20) {
+//    CGPoint point = [pan translationInView:self.view];
+//    NSLog(@"%f,%f",point.x,point.y);
+//    if (point.x <-20) {
+    
         if (!self.setVC) {
-            _setVC  = [self.storyboard instantiateViewControllerWithIdentifier:@"SetViewController"];
-            [self presentViewController:_setVC animated:YES completion:^{
-                
-            }];
-            [_setVC finishedSet:^(NSString *name, NSString *text) {
-                self.nameString = name;
-                self.titleString = text;
-                [self tap:nil];
-                _setVC=nil;
-            }];
+            self.setVC  = [self.storyboard instantiateViewControllerWithIdentifier:@"SetViewController"];
+           
 
         }
-            }
+        [self presentViewController:self.setVC animated:YES completion:^{
+            
+        }];
+        [self.setVC finishedSet:^(NSString *name, NSString *text) {
+            self.nameString = name;
+            self.titleString = text;
+            [self tap:nil];
+            
+        }];
+//            }
 
    
 }
--(AVAudioPlayer*)playerWithSourceName:(NSString*)sourceName type:(NSString*)type{
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:sourceName ofType:type];
-    
-  
-    NSString*fireworkPath = [[NSBundle mainBundle] pathForResource:sourceName ofType:type];
-    
-    NSError*error;
-    if (fireworkPath==nil) {
-        return nil;
-    }
-    NSURL *url = [NSURL fileURLWithPath:fireworkPath];
-   AVAudioPlayer *player =[[AVAudioPlayer alloc] initWithData:[NSData dataWithContentsOfFile:path] error:nil];
-//    AVAudioPlayer *player =  [[AVAudioPlayer alloc]initWithContentsOfURL:url error:&error];
-    if (error) {
-        NSLog(@"%@",error.description);
-    }
-    // self.player.numberOfLoops = 1;
-    player.delegate = self;
-    
-    
-    player.volume = 1;
-    return player;
 
-}
 
 -(void)tap:(UIGestureRecognizer*)tap{
     for (id layer in self.view.layer.sublayers) {
@@ -101,21 +83,10 @@
     [YQAnimationLayer createAnimationLayerWithString:self.titleString name:self.nameString andRect: CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.width) andView:self.view andFont:[UIFont boldSystemFontOfSize:40] andStrokeColor:[UIColor cyanColor]];
 }
 -(void)doubleTap:(UIGestureRecognizer*)doubleTap{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self rightPanTouch:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
 }
--(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    
-    [self tap:nil];
-    if (player!=_playerDict[@"papapa"]) {
-        AVAudioPlayer*playler1 = [self playerWithSourceName:@"papapa" type:@"mp3"];
-        [_playerDict setObject:playler1 forKey:@"papapa"];
-        [playler1 play];
-    }
-   
-    
 
-    
-}
 -(void)back:(UIButton*)button{
     [self dismissViewControllerAnimated:YES completion:nil];
 }

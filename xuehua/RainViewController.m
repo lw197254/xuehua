@@ -22,12 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-    UIImageView *iv = [[UIImageView alloc] initWithFrame:self.view.frame];
-    NSInteger i = arc4random()%2+1;
-    NSString*imageName = [NSString stringWithFormat:@"bk%ld@2x.jpg",(long)i];
-    iv.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:imageName ofType:nil ]];
-    iv.contentMode = UIViewContentModeScaleAspectFill;
-    [self.view addSubview:iv];
+//    UIImageView *iv = [[UIImageView alloc] initWithFrame:self.view.frame];
+//    NSInteger i = arc4random()%2+1;
+//    NSString*imageName = [NSString stringWithFormat:@"bk%ld@2x.jpg",(long)i];
+//    iv.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:imageName ofType:nil ]];
+//    iv.contentMode = UIViewContentModeScaleAspectFill;
+//    [self.view addSubview:iv];
     self.view.backgroundColor =[UIColor whiteColor] ;
     _rr = [[WindRain alloc] initWithFrame:self.view.frame];
     NSMutableArray *arr = [NSMutableArray array];
@@ -112,7 +112,8 @@
     [self.view addSubview:_rr];
     [_rr setupTimer];
     UIButton*backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.frame = CGRectMake(0, 0, 40, 40);
+    
+    backButton.frame = CGRectMake(0, 0+[UIApplication sharedApplication].statusBarFrame.size.height, 40, 40);
     [backButton setImage:[UIImage imageNamed:@"返回.png"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];

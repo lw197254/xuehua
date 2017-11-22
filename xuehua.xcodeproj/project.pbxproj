@@ -41,6 +41,8 @@
 		010887F01D2E5DBF004BABD6 /* papapa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 010887EF1D2E5DBF004BABD6 /* papapa.mp3 */; };
 		010887F21D2E63C7004BABD6 /* fireworksSoundNormal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 010887F11D2E63C7004BABD6 /* fireworksSoundNormal.m4a */; };
 		011F7E041FC3DAD1007AE0FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F7E021FC3DAD0007AE0FA /* ViewController.m */; };
+		011F7E091FC524F5007AE0FA /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F7E081FC524F5007AE0FA /* Player.m */; };
+		011F7E0C1FC579EA007AE0FA /* NSString+bezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F7E0B1FC579EA007AE0FA /* NSString+bezierPath.m */; };
 		012B5E311D4F4A9E00320FE8 /* RollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012B5E2F1D4F4A9E00320FE8 /* RollViewController.m */; };
 		012B5E321D4F4A9E00320FE8 /* RollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012B5E301D4F4A9E00320FE8 /* RollViewController.xib */; };
 		014E8CF31D265A06003DC234 /* YQAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 014E8CEE1D265A06003DC234 /* YQAnimationLayer.m */; };
@@ -95,6 +97,10 @@
 		010887F11D2E63C7004BABD6 /* fireworksSoundNormal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = fireworksSoundNormal.m4a; sourceTree = "<group>"; };
 		011F7E021FC3DAD0007AE0FA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		011F7E031FC3DAD0007AE0FA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		011F7E071FC524F5007AE0FA /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		011F7E081FC524F5007AE0FA /* Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		011F7E0A1FC579EA007AE0FA /* NSString+bezierPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+bezierPath.h"; sourceTree = "<group>"; };
+		011F7E0B1FC579EA007AE0FA /* NSString+bezierPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+bezierPath.m"; sourceTree = "<group>"; };
 		012B5E2E1D4F4A9E00320FE8 /* RollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollViewController.h; sourceTree = "<group>"; };
 		012B5E2F1D4F4A9E00320FE8 /* RollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollViewController.m; sourceTree = "<group>"; };
 		012B5E301D4F4A9E00320FE8 /* RollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RollViewController.xib; sourceTree = "<group>"; };
@@ -196,6 +202,8 @@
 		012B5E2A1D4F3F5100320FE8 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				011F7E071FC524F5007AE0FA /* Player.h */,
+				011F7E081FC524F5007AE0FA /* Player.m */,
 			);
 			name = viewModel;
 			path = source/viewModel;
@@ -212,6 +220,8 @@
 		012B5E2C1D4F3F5100320FE8 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				011F7E0A1FC579EA007AE0FA /* NSString+bezierPath.h */,
+				011F7E0B1FC579EA007AE0FA /* NSString+bezierPath.m */,
 				D5E313E31CE57F6500FE5758 /* YQPant.h */,
 				D5E313E41CE57F6500FE5758 /* YQPant.m */,
 				014E8CED1D265A06003DC234 /* YQAnimationLayer.h */,
@@ -471,8 +481,10 @@
 				01F9C5491D487D5D00A62E3C /* SetViewController.m in Sources */,
 				014E8CF51D265A06003DC234 /* YanhuaViewController.m in Sources */,
 				012B5E311D4F4A9E00320FE8 /* RollViewController.m in Sources */,
+				011F7E091FC524F5007AE0FA /* Player.m in Sources */,
 				D5E313EB1CE59E2700FE5758 /* RainViewController.m in Sources */,
 				D5E313E81CE59D4400FE5758 /* WindRain.m in Sources */,
+				011F7E0C1FC579EA007AE0FA /* NSString+bezierPath.m in Sources */,
 				D5E313D11CE57F2400FE5758 /* AppDelegate.m in Sources */,
 				D5E313CE1CE57F2400FE5758 /* main.m in Sources */,
 			);
