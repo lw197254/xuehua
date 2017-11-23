@@ -7,25 +7,25 @@
 //
 
 #import "NSString+bezierPath.h"
-
+#import <CoreText/CoreText.h>
 @implementation NSString (bezierPath)
 - (UIBezierPath *)bezierPathWithfontSize:(float)fontSize
 {
     CGMutablePathRef paths = CGPathCreateMutable();
     CFStringRef fontNameRef = CFSTR("SnellRoundhand");
-    CTFontRef fontRef = CTFontCreateWithName(fontNameRef, 18, nil);
+    CTFontRef fontRef = CTFontCreateWithName(fontNameRef, fontSize, nil);
     
     NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:self attributes:@{(__bridge NSString *)kCTFontAttributeName: (__bridge UIFont *)fontRef}];
     CTLineRef lineRef = CTLineCreateWithAttributedString((CFAttributedStringRef)attrString);
     CFArrayRef runArrRef = CTLineGetGlyphRuns(lineRef);
     
     for (int runIndex = 0; runIndex < CFArrayGetCount(runArrRef); runIndex++) {
-        const voidvoid *run = CFArrayGetValueAtIndex(runArrRef, runIndex);
+        const void *run = CFArrayGetValueAtIndex(runArrRef, runIndex);
         CTRunRef runb = (CTRunRef)run;
         
-        const voidvoid *CTFontName = kCTFontAttributeName;
+        const void *CTFontName = kCTFontAttributeName;
         
-        const voidvoid *runFontC = CFDictionaryGetValue(CTRunGetAttributes(runb), CTFontName);
+        const void *runFontC = CFDictionaryGetValue(CTRunGetAttributes(runb), CTFontName);
         CTFontRef runFontS = (CTFontRef)runFontC;
         
         CGFloat width = [UIScreen mainScreen].bounds.size.width;

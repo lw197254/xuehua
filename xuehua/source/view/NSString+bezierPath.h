@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIBezierPath.h>
+#import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 @interface NSString (bezierPath)
-
+- (UIBezierPath *)bezierPathWithfontSize:(float)fontSize;
 @end
