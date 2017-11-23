@@ -29,6 +29,15 @@
     return instance;
 }
 -(void)playerWithSourceName:(NSString*)name type:(NSString*)type numberOfLoops:(NSInteger)numberOfLoops playEndBlock:(PlayEndBlock)playEndBlock{
+    //将原来的播放器关闭
+    if (self.playerNameArray.count >self.currenIndex) {
+        NSString*currentKey = self.playerNameArray[ self.currenIndex];
+        AVAudioPlayer*playler = [self.playerDict objectForKey:currentKey];
+        if (playler) {
+            [playler stop];
+        }
+    }
+   
    
     NSString*key = [self keyFromSourceName:name type:type];
     if (playEndBlock) {

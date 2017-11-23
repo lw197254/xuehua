@@ -43,10 +43,19 @@
 		011F7E041FC3DAD1007AE0FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F7E021FC3DAD0007AE0FA /* ViewController.m */; };
 		011F7E091FC524F5007AE0FA /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F7E081FC524F5007AE0FA /* Player.m */; };
 		011F7E0C1FC579EA007AE0FA /* NSString+bezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F7E0B1FC579EA007AE0FA /* NSString+bezierPath.m */; };
+		011F7E101FC69DEE007AE0FA /* Lorelei.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 011F7E0F1FC69DEE007AE0FA /* Lorelei.mp3 */; };
+		011F7E161FC6A147007AE0FA /* home.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 011F7E151FC6A147007AE0FA /* home.jpeg */; };
+		011F7E1F1FC6AA58007AE0FA /* YZButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F7E1C1FC6AA58007AE0FA /* YZButton.m */; };
 		012B5E311D4F4A9E00320FE8 /* RollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012B5E2F1D4F4A9E00320FE8 /* RollViewController.m */; };
 		012B5E321D4F4A9E00320FE8 /* RollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012B5E301D4F4A9E00320FE8 /* RollViewController.xib */; };
 		014E8CF31D265A06003DC234 /* YQAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 014E8CEE1D265A06003DC234 /* YQAnimationLayer.m */; };
 		014E8CF51D265A06003DC234 /* YanhuaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014E8CF21D265A06003DC234 /* YanhuaViewController.m */; };
+		016617CC1FC6AD0100FF29DE /* WheelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016617CB1FC6AD0100FF29DE /* WheelViewController.m */; };
+		016617D81FC6AD9800FF29DE /* scrollModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 016617D21FC6AD9800FF29DE /* scrollModel.m */; };
+		016617D91FC6AD9800FF29DE /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 016617D41FC6AD9800FF29DE /* UserModel.m */; };
+		016617DA1FC6AD9800FF29DE /* GiftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 016617D51FC6AD9800FF29DE /* GiftModel.m */; };
+		016617DE1FC6AEB500FF29DE /* YZLuckyWheel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016617DC1FC6AEB400FF29DE /* YZLuckyWheel.xib */; };
+		016617DF1FC6AEB500FF29DE /* YZLuckyWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 016617DD1FC6AEB400FF29DE /* YZLuckyWheel.m */; };
 		01F9C5491D487D5D00A62E3C /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F9C5481D487D5D00A62E3C /* SetViewController.m */; };
 		469651EA048F8B8A2F22A65E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC76B964AF6D80DB7DA3F135 /* libPods.a */; };
 		688A895E1CE589770072C8BC /* test1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 688A895D1CE589770072C8BC /* test1.plist */; };
@@ -96,11 +105,15 @@
 		010887EF1D2E5DBF004BABD6 /* papapa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = papapa.mp3; sourceTree = "<group>"; };
 		010887F11D2E63C7004BABD6 /* fireworksSoundNormal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = fireworksSoundNormal.m4a; sourceTree = "<group>"; };
 		011F7E021FC3DAD0007AE0FA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		011F7E031FC3DAD0007AE0FA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		011F7E071FC524F5007AE0FA /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		011F7E081FC524F5007AE0FA /* Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		011F7E0A1FC579EA007AE0FA /* NSString+bezierPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+bezierPath.h"; sourceTree = "<group>"; };
 		011F7E0B1FC579EA007AE0FA /* NSString+bezierPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+bezierPath.m"; sourceTree = "<group>"; };
+		011F7E0D1FC6786D007AE0FA /* position.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = position.plist; sourceTree = "<group>"; };
+		011F7E0F1FC69DEE007AE0FA /* Lorelei.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Lorelei.mp3; sourceTree = "<group>"; };
+		011F7E151FC6A147007AE0FA /* home.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = home.jpeg; sourceTree = "<group>"; };
+		011F7E1A1FC6AA58007AE0FA /* YZButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZButton.h; sourceTree = "<group>"; };
+		011F7E1C1FC6AA58007AE0FA /* YZButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZButton.m; sourceTree = "<group>"; };
 		012B5E2E1D4F4A9E00320FE8 /* RollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollViewController.h; sourceTree = "<group>"; };
 		012B5E2F1D4F4A9E00320FE8 /* RollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollViewController.m; sourceTree = "<group>"; };
 		012B5E301D4F4A9E00320FE8 /* RollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RollViewController.xib; sourceTree = "<group>"; };
@@ -108,6 +121,18 @@
 		014E8CEE1D265A06003DC234 /* YQAnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YQAnimationLayer.m; path = ../../YQAnimationLayer.m; sourceTree = "<group>"; };
 		014E8CF11D265A06003DC234 /* YanhuaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YanhuaViewController.h; path = ../../YanhuaViewController.h; sourceTree = "<group>"; };
 		014E8CF21D265A06003DC234 /* YanhuaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YanhuaViewController.m; path = ../../YanhuaViewController.m; sourceTree = "<group>"; };
+		016617CA1FC6AD0100FF29DE /* WheelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelViewController.h; sourceTree = "<group>"; };
+		016617CB1FC6AD0100FF29DE /* WheelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelViewController.m; sourceTree = "<group>"; };
+		016617CD1FC6AD1400FF29DE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		016617D21FC6AD9800FF29DE /* scrollModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scrollModel.m; sourceTree = "<group>"; };
+		016617D31FC6AD9800FF29DE /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		016617D41FC6AD9800FF29DE /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		016617D51FC6AD9800FF29DE /* GiftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftModel.m; sourceTree = "<group>"; };
+		016617D61FC6AD9800FF29DE /* scrollModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scrollModel.h; sourceTree = "<group>"; };
+		016617D71FC6AD9800FF29DE /* GiftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftModel.h; sourceTree = "<group>"; };
+		016617DB1FC6AEB400FF29DE /* YZLuckyWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZLuckyWheel.h; sourceTree = "<group>"; };
+		016617DC1FC6AEB400FF29DE /* YZLuckyWheel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YZLuckyWheel.xib; sourceTree = "<group>"; };
+		016617DD1FC6AEB400FF29DE /* YZLuckyWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZLuckyWheel.m; sourceTree = "<group>"; };
 		01F9C5471D487D5C00A62E3C /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetViewController.h; path = ../../SetViewController.h; sourceTree = "<group>"; };
 		01F9C5481D487D5D00A62E3C /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetViewController.m; path = ../../SetViewController.m; sourceTree = "<group>"; };
 		2B3BF6F644CA0709F5A64F8F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				010887AB1D2E4552004BABD6 /* bk1@2x.jpg */,
+				011F7E151FC6A147007AE0FA /* home.jpeg */,
 				010887AC1D2E4552004BABD6 /* bk2@2x.jpg */,
 				010887AD1D2E4552004BABD6 /* lm.gif */,
 				010887AE1D2E4552004BABD6 /* s10.png */,
@@ -193,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				010887E81D2E4566004BABD6 /* fireworksSound.mp3 */,
+				011F7E0F1FC69DEE007AE0FA /* Lorelei.mp3 */,
 				010887F11D2E63C7004BABD6 /* fireworksSoundNormal.m4a */,
 				010887EF1D2E5DBF004BABD6 /* papapa.mp3 */,
 			);
@@ -212,6 +239,12 @@
 		012B5E2B1D4F3F5100320FE8 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				016617D71FC6AD9800FF29DE /* GiftModel.h */,
+				016617D51FC6AD9800FF29DE /* GiftModel.m */,
+				016617D61FC6AD9800FF29DE /* scrollModel.h */,
+				016617D21FC6AD9800FF29DE /* scrollModel.m */,
+				016617D31FC6AD9800FF29DE /* UserModel.h */,
+				016617D41FC6AD9800FF29DE /* UserModel.m */,
 			);
 			name = model;
 			path = source/model;
@@ -228,6 +261,11 @@
 				014E8CEE1D265A06003DC234 /* YQAnimationLayer.m */,
 				D5E313E61CE59D4400FE5758 /* WindRain.h */,
 				D5E313E71CE59D4400FE5758 /* WindRain.m */,
+				011F7E1A1FC6AA58007AE0FA /* YZButton.h */,
+				011F7E1C1FC6AA58007AE0FA /* YZButton.m */,
+				016617DB1FC6AEB400FF29DE /* YZLuckyWheel.h */,
+				016617DD1FC6AEB400FF29DE /* YZLuckyWheel.m */,
+				016617DC1FC6AEB400FF29DE /* YZLuckyWheel.xib */,
 			);
 			name = view;
 			path = source/view;
@@ -236,8 +274,10 @@
 		012B5E2D1D4F3F5100320FE8 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				016617CD1FC6AD1400FF29DE /* ViewController.h */,
 				011F7E021FC3DAD0007AE0FA /* ViewController.m */,
-				011F7E031FC3DAD0007AE0FA /* ViewController.h */,
+				016617CA1FC6AD0100FF29DE /* WheelViewController.h */,
+				016617CB1FC6AD0100FF29DE /* WheelViewController.m */,
 				D5E313E91CE59E2700FE5758 /* RainViewController.h */,
 				D5E313EA1CE59E2700FE5758 /* RainViewController.m */,
 				014E8CF11D265A06003DC234 /* YanhuaViewController.h */,
@@ -311,6 +351,7 @@
 			children = (
 				688A89611CE595900072C8BC /* test.plist */,
 				688A895D1CE589770072C8BC /* test1.plist */,
+				011F7E0D1FC6786D007AE0FA /* position.plist */,
 				D5E313CD1CE57F2400FE5758 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -391,6 +432,7 @@
 				010887DF1D2E4552004BABD6 /* s27.png in Resources */,
 				010887CC1D2E4552004BABD6 /* lm.gif in Resources */,
 				010887DE1D2E4552004BABD6 /* s26.png in Resources */,
+				011F7E101FC69DEE007AE0FA /* Lorelei.mp3 in Resources */,
 				010887E51D2E4552004BABD6 /* s8.png in Resources */,
 				010887E71D2E4552004BABD6 /* 返回@2x.png in Resources */,
 				010887DA1D2E4552004BABD6 /* s22.png in Resources */,
@@ -402,6 +444,7 @@
 				010887D71D2E4552004BABD6 /* s2.png in Resources */,
 				010887E21D2E4552004BABD6 /* s5.png in Resources */,
 				010887E61D2E4552004BABD6 /* s9.png in Resources */,
+				011F7E161FC6A147007AE0FA /* home.jpeg in Resources */,
 				010887DB1D2E4552004BABD6 /* s23.png in Resources */,
 				D5E313DC1CE57F2400FE5758 /* LaunchScreen.storyboard in Resources */,
 				D5E313D91CE57F2400FE5758 /* Assets.xcassets in Resources */,
@@ -411,6 +454,7 @@
 				010887D31D2E4552004BABD6 /* s16.png in Resources */,
 				010887CF1D2E4552004BABD6 /* s12.png in Resources */,
 				010887D01D2E4552004BABD6 /* s13.png in Resources */,
+				016617DE1FC6AEB500FF29DE /* YZLuckyWheel.xib in Resources */,
 				010887F21D2E63C7004BABD6 /* fireworksSoundNormal.m4a in Resources */,
 				D5E313D71CE57F2400FE5758 /* Main.storyboard in Resources */,
 				010887CE1D2E4552004BABD6 /* s11.png in Resources */,
@@ -478,15 +522,21 @@
 				D5E313E51CE57F6500FE5758 /* YQPant.m in Sources */,
 				014E8CF31D265A06003DC234 /* YQAnimationLayer.m in Sources */,
 				011F7E041FC3DAD1007AE0FA /* ViewController.m in Sources */,
+				016617DA1FC6AD9800FF29DE /* GiftModel.m in Sources */,
 				01F9C5491D487D5D00A62E3C /* SetViewController.m in Sources */,
 				014E8CF51D265A06003DC234 /* YanhuaViewController.m in Sources */,
+				016617D91FC6AD9800FF29DE /* UserModel.m in Sources */,
 				012B5E311D4F4A9E00320FE8 /* RollViewController.m in Sources */,
 				011F7E091FC524F5007AE0FA /* Player.m in Sources */,
 				D5E313EB1CE59E2700FE5758 /* RainViewController.m in Sources */,
+				016617D81FC6AD9800FF29DE /* scrollModel.m in Sources */,
 				D5E313E81CE59D4400FE5758 /* WindRain.m in Sources */,
+				011F7E1F1FC6AA58007AE0FA /* YZButton.m in Sources */,
 				011F7E0C1FC579EA007AE0FA /* NSString+bezierPath.m in Sources */,
 				D5E313D11CE57F2400FE5758 /* AppDelegate.m in Sources */,
+				016617DF1FC6AEB500FF29DE /* YZLuckyWheel.m in Sources */,
 				D5E313CE1CE57F2400FE5758 /* main.m in Sources */,
+				016617CC1FC6AD0100FF29DE /* WheelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

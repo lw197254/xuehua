@@ -11,4 +11,5 @@
 #import <CoreGraphics/CoreGraphics.h>
 @interface NSString (bezierPath)
 - (UIBezierPath *)bezierPathWithfontSize:(float)fontSize;
+-(NSArray*)positionArrayWithfontSize:(float)fontSize;
 @end

@@ -38,6 +38,7 @@
 
 - (IBAction)action_next:(UIButton *)sender {
     RainViewController *rvc = [[RainViewController alloc] init];
+    
     rvc.points = [_pantView readData];
     [self presentViewController:rvc animated:YES completion:^{
         

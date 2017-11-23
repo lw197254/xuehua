@@ -9,6 +9,7 @@
 #import "YQAnimationLayer.h"
 #import "Player.h"
 #import "SetViewController.h"
+#import "WheelViewController.h"
 @interface YanhuaViewController ()
 @property (nonatomic, strong)CAEmitterLayer * emitterLayer;
 
@@ -47,30 +48,30 @@
     }];
    
 }
--(void)rightPanTouch:(UIPanGestureRecognizer*)pan{
-    
-//    CGPoint point = [pan translationInView:self.view];
-//    NSLog(@"%f,%f",point.x,point.y);
-//    if (point.x <-20) {
-    
-        if (!self.setVC) {
-            self.setVC  = [self.storyboard instantiateViewControllerWithIdentifier:@"SetViewController"];
-           
-
-        }
-        [self presentViewController:self.setVC animated:YES completion:^{
-            
-        }];
-        [self.setVC finishedSet:^(NSString *name, NSString *text) {
-            self.nameString = name;
-            self.titleString = text;
-            [self tap:nil];
-            
-        }];
-//            }
-
-   
-}
+//-(void)rightPanTouch:(UIPanGestureRecognizer*)pan{
+//
+////    CGPoint point = [pan translationInView:self.view];
+////    NSLog(@"%f,%f",point.x,point.y);
+////    if (point.x <-20) {
+//
+//        if (!self.setVC) {
+//            self.setVC  = [self.storyboard instantiateViewControllerWithIdentifier:@"SetViewController"];
+//
+//
+//        }
+//        [self presentViewController:self.setVC animated:YES completion:^{
+//
+//        }];
+//        [self.setVC finishedSet:^(NSString *name, NSString *text) {
+//            self.nameString = name;
+//            self.titleString = text;
+//            [self tap:nil];
+//
+//        }];
+////            }
+//
+//
+//}
 
 
 -(void)tap:(UIGestureRecognizer*)tap{
@@ -83,7 +84,9 @@
     [YQAnimationLayer createAnimationLayerWithString:self.titleString name:self.nameString andRect: CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.width) andView:self.view andFont:[UIFont boldSystemFontOfSize:40] andStrokeColor:[UIColor cyanColor]];
 }
 -(void)doubleTap:(UIGestureRecognizer*)doubleTap{
-    [self rightPanTouch:nil];
+    WheelViewController*vc = [[WheelViewController alloc]init];
+    [self presentViewController:vc animated:YES completion:nil];
+//    [self rightPanTouch:nil];
 //    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
