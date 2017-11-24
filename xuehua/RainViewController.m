@@ -9,6 +9,8 @@
 #import "RainViewController.h"
 #import "WindRain.h"
 #import "YanhuaViewController.h"
+#import "Player.h"
+#import "Masonry.h"
 @interface RainViewController ()
 
 @property (nonatomic, strong) WindRain *rr;
@@ -21,7 +23,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    UIImageView*imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"home.jpeg"]];
+//    imageView.contentMode = UIViewContentModeScaleAspectFill;
+//    imageView.clipsToBounds = YES;
+    [self.view addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    [[Player shareInstance]playerWithSourceName:@"Lorelei" type:@"mp3" numberOfLoops:-1 playEndBlock:^(AVAudioPlayer *player) {
+        
+    }];
 //    UIImageView *iv = [[UIImageView alloc] initWithFrame:self.view.frame];
 //    NSInteger i = arc4random()%2+1;
 //    NSString*imageName = [NSString stringWithFormat:@"bk%ld@2x.jpg",(long)i];
@@ -35,7 +46,7 @@
         [arr addObject:[UIImage imageNamed:[NSString stringWithFormat:@"s%d", i]]];
     }
     
-    [self showGif];
+//    [self showGif];
     
     //优化，计算出最大值，当y值超过最大值时没必要进入循环
     CGFloat maxY = 0;
@@ -54,9 +65,9 @@
     _rr.rainMaxCount = 14;
     _rr.rainMinCount = 10;
     _rr.imgs = [arr copy];
-    [_rr whenClicked:^(UIButton *btn, WindRain *windRain) {
-        [self showGif];
-    }];
+//    [_rr whenClicked:^(UIButton *btn, WindRain *windRain) {
+//        [self showGif];
+//    }];
     
     [_rr whenMoved:^(UIButton *btn, WindRain *windRain) {
         //有点消耗性能，卡顿.优化

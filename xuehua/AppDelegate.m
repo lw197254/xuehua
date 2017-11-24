@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "RainViewController.h"
+#import "YQPant.h"
+#import "WheelViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +18,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    RainViewController*vc = [[RainViewController alloc]init];
+//    YQPant*pan = [[YQPant alloc]init];
+//        vc.points = [pan readData];
+    WheelViewController*vc = [[WheelViewController alloc]init];
+    
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible ];
     // Override point for customization after application launch.
     return YES;
 }

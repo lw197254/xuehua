@@ -63,29 +63,55 @@
     [self setNeedsDisplay];
 }
 - (void)save {
-    UIBezierPath*path = [@"xiaoming" bezierPathWithfontSize:18];
-     [path stroke];
-    
-//    NSMutableArray *tmp = [NSMutableArray arrayWithCapacity:256];
-//    for (NSMutableArray *arr in _totalArr) {
-//        for (NSValue *pv in arr) {
-//             NSString *str = [NSString stringWithFormat:@"%f,%f", [pv CGPointValue].x, pv.CGPointValue.y];
-//            [tmp addObject:str];
-//        }
-//    }
+//    UIBezierPath*path = [@"喜欢" bezierPathWithfontSize:206];
 //
-////    NSString *sandBox = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-////
-////    NSString *plistPath = [sandBox stringByAppendingString:@"test.plist"];
+//
+//
+//    CAShapeLayer *layer = [CAShapeLayer layer];
+//    layer.bounds = CGPathGetBoundingBox(path.CGPath);
+//    layer.position = CGPointMake(self.bounds.size.width/2, 50);
+//    layer.geometryFlipped = YES;
+//    layer.path = path.CGPath;
+//    layer.fillColor = [UIColor clearColor].CGColor;
+//    layer.lineWidth = 1;
+//    layer.strokeColor = [UIColor blackColor].CGColor;
+//    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+//    animation.fromValue = @(0);
+//    animation.toValue = @(1);
+//    animation.duration = layer.bounds.size.width/20;
+//    [layer addAnimation:animation forKey:nil];
+//    [self.layer addSublayer:layer];
+    
+    NSMutableArray *tmp = [NSMutableArray arrayWithCapacity:256];
+    for (NSMutableArray *arr in _totalArr) {
+        for (NSValue *pv in arr) {
+             NSString *str = [NSString stringWithFormat:@"%f,%f", [pv CGPointValue].x, pv.CGPointValue.y];
+            [tmp addObject:str];
+        }
+    }
+//
+//    NSString *sandBox = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+//
+//    NSString *plistPath = [sandBox stringByAppendingString:@"test.plist"];
+//    NSMutableArray *tmp1 = [NSMutableArray arrayWithCapacity:256];
+//    NSArray*tmp = [@"喜欢" positionArrayWithfontSize:206];
+//    for (NSValue *pv in tmp) {
+//        NSString *str = [NSString stringWithFormat:@"%f,%f", [pv CGPointValue].x, pv.CGPointValue.y];
+//        [tmp1 addObject:str];
+//    }
+    NSString *plistPath = @"/Users/liuwei/Desktop/position";
 //   NSString *plistPath =   [NSHomeDirectory() stringByAppendingFormat:@"/Library/Caches/test.plist"];
-//    [tmp writeToFile:plistPath atomically:YES];
+    [tmp writeToFile:plistPath atomically:YES];
+    
+    
 }
 
 - (NSMutableArray *)readData {
 //    NSString *sandBox = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
 //    [NSHomeDirectory() stringByAppendingFormat:@"/Library/Caches/headImage.png"];
 //    NSString *plistPath = [sandBox stringByAppendingString:@"test.plist"];
-    NSString *plistPath =   [NSHomeDirectory() stringByAppendingFormat:@"/Library/Caches/test.plist"];
+//    NSString *plistPath =   [NSHomeDirectory() stringByAppendingFormat:@"/Library/Caches/test.plist"];
+     NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"test1" ofType:@"plist"];
     NSMutableArray *arr = [NSMutableArray arrayWithContentsOfFile:plistPath];
    
     NSMutableArray *rs = [NSMutableArray arrayWithCapacity:256];
@@ -98,11 +124,11 @@
     return rs;
 }
 
-//- (void)drawRect:(CGRect)rect {
-//    for (UIBezierPath *path in _pathArr) {
-//        [path stroke];
-//    }
-//
-//}
+- (void)drawRect:(CGRect)rect {
+    for (UIBezierPath *path in _pathArr) {
+        [path stroke];
+    }
+
+}
 
 @end
