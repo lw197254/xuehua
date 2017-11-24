@@ -64,7 +64,13 @@
 //    
 //}
 
-
+-(void)reSetGifArray:(NSArray*)array{
+    self.giftArray = array;
+    [self.btnsArray enumerateObjectsUsingBlock:^(UIButton* obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        GiftModel*model = array[idx];
+        [obj setTitle:model.giftName forState:UIControlStateNormal];
+    }];
+}
 #pragma mark - 开始选号，监听按钮的响应事件
 - (IBAction)startSelectAction:(UIButton *)sender {
      self.selectedBtn.selected = NO;

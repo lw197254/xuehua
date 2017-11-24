@@ -10,9 +10,10 @@
 #import "Player.h"
 #import "SetViewController.h"
 #import "WheelViewController.h"
+#import "Masonry.h"
 @interface YanhuaViewController ()
 @property (nonatomic, strong)CAEmitterLayer * emitterLayer;
-
+@property (nonatomic, strong) UIButton*nextButton;
 @property(nonatomic,strong)SetViewController*setVC;
 @end
 
@@ -32,21 +33,47 @@
     
     
     UITapGestureRecognizer*tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
-    UITapGestureRecognizer*doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTap:)];
-    doubleTap.numberOfTapsRequired = 2;
+//    UITapGestureRecognizer*doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTap:)];
+//    doubleTap.numberOfTapsRequired = 2;
     [self.view addGestureRecognizer:tap];
-    [self.view addGestureRecognizer:doubleTap];
-     [tap requireGestureRecognizerToFail:doubleTap];
-    UILongPressGestureRecognizer*pan = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(rightPanTouch:)];
-    [self.view addGestureRecognizer:pan];
+//    [self.view addGestureRecognizer:doubleTap];
+//     [tap requireGestureRecognizerToFail:doubleTap];
+//    UILongPressGestureRecognizer*pan = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(rightPanTouch:)];
+//    [self.view addGestureRecognizer:pan];
+    
+    self.nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    self.nextButton.alpha = 0;
+    
+    [self.nextButton setTitle:@"点我玩抽奖" forState:UIControlStateNormal];
+    [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.nextButton addTarget:self action:@selector(next:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.nextButton];
+    [self.nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).with.offset(-30);
+        make.centerX.equalTo(self.view);
+    }];
     [[Player shareInstance] playerWithSourceName:@"fireworksSoundNormal" type:@"m4a" numberOfLoops:0 playEndBlock:^(AVAudioPlayer *player) {
         [self tap:nil];
         [[Player shareInstance] playerWithSourceName:@"fireworksSound" type:@"mp3" numberOfLoops:0 playEndBlock:^(AVAudioPlayer *player) {
-             [[Player shareInstance] playerWithSourceName:@"papapa" type:@"mp3" numberOfLoops:0 playEndBlock:nil];
+             [[Player shareInstance] playerWithSourceName:@"papapa" type:@"mp3" numberOfLoops:0 playEndBlock:^(AVAudioPlayer *player) {
+                 [[Player shareInstance] playerWithSourceName:@"生日快乐" type:@"mp3" numberOfLoops:-1 playEndBlock:^(AVAudioPlayer *player) {
+                     
+                 }];
+
+                 [UIView animateWithDuration:0.25 animations:^{
+                     self.nextButton.alpha = 1;
+                 }];
+             }];
         }];
        
     }];
    
+}
+-(void)next:(UIButton*)button{
+    WheelViewController*yqVC = [[WheelViewController alloc]init];
+    
+    [self presentViewController:yqVC animated:YES completion:nil];
 }
 //-(void)rightPanTouch:(UIPanGestureRecognizer*)pan{
 //
