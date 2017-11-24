@@ -56,6 +56,7 @@
 		016617DA1FC6AD9800FF29DE /* GiftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 016617D51FC6AD9800FF29DE /* GiftModel.m */; };
 		016617DE1FC6AEB500FF29DE /* YZLuckyWheel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016617DC1FC6AEB400FF29DE /* YZLuckyWheel.xib */; };
 		016617DF1FC6AEB500FF29DE /* YZLuckyWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 016617DD1FC6AEB400FF29DE /* YZLuckyWheel.m */; };
+		017969661FC7F4C30083759A /* 生日快乐.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 017969651FC7F4C20083759A /* 生日快乐.mp3 */; };
 		01F9C5491D487D5D00A62E3C /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F9C5481D487D5D00A62E3C /* SetViewController.m */; };
 		469651EA048F8B8A2F22A65E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC76B964AF6D80DB7DA3F135 /* libPods.a */; };
 		688A895E1CE589770072C8BC /* test1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 688A895D1CE589770072C8BC /* test1.plist */; };
@@ -133,6 +134,7 @@
 		016617DB1FC6AEB400FF29DE /* YZLuckyWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZLuckyWheel.h; sourceTree = "<group>"; };
 		016617DC1FC6AEB400FF29DE /* YZLuckyWheel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YZLuckyWheel.xib; sourceTree = "<group>"; };
 		016617DD1FC6AEB400FF29DE /* YZLuckyWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZLuckyWheel.m; sourceTree = "<group>"; };
+		017969651FC7F4C20083759A /* 生日快乐.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "生日快乐.mp3"; sourceTree = "<group>"; };
 		01F9C5471D487D5C00A62E3C /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetViewController.h; path = ../../SetViewController.h; sourceTree = "<group>"; };
 		01F9C5481D487D5D00A62E3C /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetViewController.m; path = ../../SetViewController.m; sourceTree = "<group>"; };
 		2B3BF6F644CA0709F5A64F8F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				010887E81D2E4566004BABD6 /* fireworksSound.mp3 */,
+				017969651FC7F4C20083759A /* 生日快乐.mp3 */,
 				011F7E0F1FC69DEE007AE0FA /* Lorelei.mp3 */,
 				010887F11D2E63C7004BABD6 /* fireworksSoundNormal.m4a */,
 				010887EF1D2E5DBF004BABD6 /* papapa.mp3 */,
@@ -449,6 +452,7 @@
 				D5E313DC1CE57F2400FE5758 /* LaunchScreen.storyboard in Resources */,
 				D5E313D91CE57F2400FE5758 /* Assets.xcassets in Resources */,
 				010887CD1D2E4552004BABD6 /* s10.png in Resources */,
+				017969661FC7F4C30083759A /* 生日快乐.mp3 in Resources */,
 				688A89621CE595900072C8BC /* test.plist in Resources */,
 				010887D91D2E4552004BABD6 /* s21.png in Resources */,
 				010887D31D2E4552004BABD6 /* s16.png in Resources */,

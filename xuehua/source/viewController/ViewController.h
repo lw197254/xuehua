@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WheelViewController : UIViewController
+@interface ViewController : UIViewController
 
 
 @end

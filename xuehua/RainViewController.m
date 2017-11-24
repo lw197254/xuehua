@@ -16,7 +16,7 @@
 @property (nonatomic, strong) WindRain *rr;
 
 @property (nonatomic, strong) UIWebView *webView;
-
+@property (nonatomic, strong) UIButton*nextButton;
 @end
 
 @implementation RainViewController
@@ -90,9 +90,10 @@
                         //雪花停止
                         if(_points.count==0){
                             NSLog(@"完成");
-                            YanhuaViewController*yqVC = [[YanhuaViewController alloc]init];
-                            yqVC.titleString = @"你好，祝你生日快乐，每天顺心";
-                            [self presentViewController:yqVC animated:YES completion:nil];
+                            [UIView animateWithDuration:0.25 animations:^{
+                               self.nextButton.alpha = 1;
+                            }];
+                            
                         }
                         dispatch_async(dispatch_get_main_queue(), ^{
                             [UIView animateWithDuration:0.5 animations:^{
@@ -122,15 +123,26 @@
     
     [self.view addSubview:_rr];
     [_rr setupTimer];
-    UIButton*backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    backButton.frame = CGRectMake(0, 0+[UIApplication sharedApplication].statusBarFrame.size.height, 40, 40);
-    [backButton setImage:[UIImage imageNamed:@"返回.png"] forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:backButton];
+    self.nextButton.alpha = 0;
+    
+    [self.nextButton setTitle:@"点我看烟花" forState:UIControlStateNormal];
+    [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.nextButton addTarget:self action:@selector(next:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.nextButton];
+    [self.nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).with.offset(-30);
+        make.centerX.equalTo(self.view);
+    }];
+    
 }
--(void)back:(UIButton*)button{
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+
+-(void)next:(UIButton*)button{
+    YanhuaViewController*yqVC = [[YanhuaViewController alloc]init];
+    yqVC.titleString = @"你好，祝你生日快乐，每天顺心";
+    [self presentViewController:yqVC animated:YES completion:nil];
 }
 - (void)showGif {
     if (!_webView) {

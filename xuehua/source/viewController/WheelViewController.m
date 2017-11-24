@@ -9,9 +9,9 @@
 #import "WheelViewController.h"
 #import "YZLuckyWheel.h"
 #import "Masonry.h"
-
+#import "Player.h"
 @interface WheelViewController ()
-
+@property(nonatomic,strong)YZLuckyWheel*wheelView;
 
 @end
 
@@ -27,10 +27,10 @@
     //参照board
     
     //设置转盘 从XIB文件中加载
-    YZLuckyWheel *wheelView = [YZLuckyWheel loadWheelXib];
+    self.wheelView = [YZLuckyWheel loadWheelXib];
 //    wheelView.center = self.view.center;
-    [self.view addSubview:wheelView];
-    [wheelView sizeToFit];
+    [self.view addSubview: self.wheelView];
+    [ self.wheelView sizeToFit];
    
 //    UIButton*button = [UIButton buttonWithType:UIButtonTypeSystem];
 //    [button setTitle:@"打开" forState:UIControlStateNormal];
@@ -38,7 +38,7 @@
 //    [button setBackgroundColor:[UIColor blackColor]];
 //    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 //    [self.view addSubview:button];
-    [wheelView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [ self.wheelView setTranslatesAutoresizingMaskIntoConstraints:NO];
 //    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     UILabel*label = [[UILabel alloc]init];
     label.text = @"请选择一位带回家";
@@ -46,9 +46,9 @@
     [self.view addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(wheelView.mas_top).offset(-60);
+        make.bottom.equalTo( self.wheelView.mas_top).offset(-60);
     }];
-    [wheelView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [ self.wheelView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.centerY.equalTo(self.view);
     }];
     
@@ -57,9 +57,18 @@
     [self.view addSubview:back];
     [back addTarget:self action:@selector(backToHome) forControlEvents:UIControlEventTouchUpInside];
     [back mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(wheelView.mas_bottom).offset(40);
+        make.top.equalTo( self.wheelView.mas_bottom).offset(40);
         make.centerX.equalTo(self.view);
     }];
+    
+//    UIButton*daluan = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [daluan setTitle:@"打乱" forState:UIControlStateNormal];
+//    [self.view addSubview:daluan];
+//    [daluan addTarget:self action:@selector(daluan) forControlEvents:UIControlEventTouchUpInside];
+//    [daluan mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo( label.mas_bottom).offset(5);
+//        make.centerX.equalTo(self.view);
+//    }];
 //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:wheelView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0]];
     
 //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:wheelView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.luckWheelImageView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:10]];
@@ -88,18 +97,33 @@
         }
         [array addObject:model];
     }
-    wheelView.giftArray =array ;
+     self.wheelView.giftArray =array ;
     
 }
--(void)backToHome{
-    if (self.presentedViewController) {
-        [self dismissViewControllerAnimated:YES completion:^{
-            if(self.presentedViewController.presentedViewController){
-                [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
-            }
-            
-        }];
+-(void)daluan{
+    NSMutableArray*array =[NSMutableArray arrayWithArray:self.wheelView.giftArray];
+    NSMutableArray*newArray = [NSMutableArray array];
+    for (NSInteger i = 0; i < self.wheelView.giftArray.count; i++) {
+        NSInteger index = arc4random()%array.count;
+        [newArray addObject:array[index]];
+        [array removeObjectAtIndex:index];
+        
     }
+    
+    [self.wheelView reSetGifArray:newArray];
+}
+-(void)backToHome{
+    if (self.presentingViewController) {
+//        [self dismissViewControllerAnimated:YES completion:^{
+//            if(self.presentedViewController.presentedViewController){
+                [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+//            }
+        
+//        }];
+    }
+    [[Player shareInstance]playerWithSourceName:@"Lorelei" type:@"mp3" numberOfLoops:-1 playEndBlock:^(AVAudioPlayer *player) {
+        
+    }];
 }
 -(void)next:(UIButton*)sender{
     

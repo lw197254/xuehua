@@ -14,7 +14,7 @@
 
 //提供给外界的借口：用于加载XIB文件，
 + (instancetype)loadWheelXib;
-
+-(void)reSetGifArray:(NSArray*)array;
 //转动
 - (void)start;
 @end
