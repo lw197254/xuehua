@@ -118,6 +118,8 @@
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
 }
+
+
 -(void)back:(UIButton*)button{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
